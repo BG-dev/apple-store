@@ -36,15 +36,15 @@ function SortPopup({items}){
                     fill="#2C2C2C" />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>{items[activeItem]}</span>
+                <span onClick={toggleVisiblePopup}>{items[activeItem].name}</span>
               </div>
               {visiblePopup && <div className="sort__popup">
                 <ul>
                     {
-                        items.map((item, index) => <li 
+                        items.map((obj, index) => <li 
                         className={activeItem === index ? 'active' : ''}
-                        onClick={() => onSelectItem(index)}
-                        key={index}>{item}</li>)
+                        onClick={() =>  onSelectItem(index)}
+                        key={index}>{obj.name}</li>)
                     }
                 </ul>
               </div>}
