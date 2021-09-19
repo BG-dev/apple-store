@@ -8,7 +8,7 @@ function DeviceBlock({device}){
     return(
         <div className="pizza-block">
               <img className="pizza-block__image"
-                src={device.imageUrl}
+                src={"http://localhost:3000/" + device.imagePath + (device.colors ? (activeColor+1) : "1") + ".jpg"}
                 alt="Device" />
               <h4 className="pizza-block__title">{device.name}</h4>
               <div className="pizza-block__selector">
