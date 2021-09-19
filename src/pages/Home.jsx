@@ -1,8 +1,8 @@
 import React from "react";
-
+import {connect} from 'react-redux';
 import {Categories, SortPopup, DeviceBlock} from '../components'
 
-function Home({devices}){
+function Home({devices, activeItem}){
 
     return(
         <div className="container">
@@ -25,14 +25,19 @@ function Home({devices}){
           </div>
           <h2 className="content__title">Все устройства</h2>
           <div className="content__items">
-            {
-              devices.map((item) => {
-                return <DeviceBlock key={item.id} device={item}/>    
-              })
+            { devices &&
+              devices.map((item) => activeItem === null || item.category === activeItem ? 
+              <DeviceBlock key={item.id} device={item}/> : "")
             }
           </div>
         </div>
     );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    activeItem: state.categories.category
+  };
+};
+
+export default connect(mapStateToProps)(Home);

@@ -6,12 +6,12 @@ function DeviceBlock({device}){
   const [activeColor, setActiveColor] = React.useState(0);
 
     return(
-        <div className="pizza-block">
-              <img className="pizza-block__image"
+        <div className="device-block">
+              <img className="device-block__image"
                 src={"http://localhost:3000/" + device.imagePath + (device.colors ? (activeColor+1) : "1") + ".jpg"}
-                alt="Device" />
-              <h4 className="pizza-block__title">{device.name}</h4>
-              <div className="pizza-block__selector">
+                alt={device.name} />
+              <h4 className="device-block__title">{device.name}</h4>
+              <div className="device-block__selector">
                 <ul>
                   { device.colors &&
                     device.colors.map((item, index) => <li 
@@ -28,12 +28,16 @@ function DeviceBlock({device}){
                       key={index}
                       className={ index === activeCapacity ? 'active' : '' } 
                       onClick={() => setActiveCapacity(index)}
-                      >{item >= 1000 ? item/1000 + ' ТБ' : item + ' ГБ'}</li>)
+                      >{
+                        item.size && item.size >= 1000 ? item.size/1000 + ' ТБ' : item.size + ' ГБ'
+                        }</li>)
                   }
                 </ul>
               </div>
-              <div className="pizza-block__bottom">
-                <div className="pizza-block__price">{device.price}$</div>
+              <div className="device-block__bottom">
+                <div className="device-block__price">{
+                (device.price + (device.capacity ? device.capacity[activeCapacity].price : 0))
+                }$</div>
                 <div className="button button--outline button--add">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

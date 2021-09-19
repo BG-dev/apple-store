@@ -13,7 +13,7 @@ function App({items, setDevices}) {
       .then((json) => {
         setDevices(json.devices)
       });
-  },[])
+  },[setDevices])
 
   return ( 
     <div className="wrapper">

@@ -5,8 +5,8 @@
       "imagePath": "img/iphone_12/",
       "name": "iPhone 12",
       "colors": ["beb7ea", "000000", "033357", "dbf2d8", "d52b2b", "ffffff"],
-      "capacity": [64, 128, 256],
-      "price": 699,
+      "capacity": [{"size": 64, "price": 0}, {"size": 128, "price": 100}, {"size": 256, "price": 250}],
+      "price": 1000,
       "category": 0,
       "rating": 4
     },
@@ -15,9 +15,9 @@
       "imagePath": "img/iphone_12_pro/",
       "name": "iPhone 12 Pro",
       "colors": ["3f5a65", "3c3b37", "fdeacc", "e4e5df"],
-      "capacity": [128, 256, 512],
-      "price": 899,
-      "category": 1,
+      "capacity": [{"size": 128, "price": 0}, {"size": 256, "price": 150}, {"size": 512, "price": 300}],
+      "price": 1200,
+      "category": 0,
       "rating": 6
     },
     {
@@ -25,9 +25,9 @@
       "imagePath": "img/macbook_pro_13/",
       "name": "MacBook Pro 13",
       "colors": ["8c8d8f", "727378"],
-      "capacity": [256, 512],
-      "price": 295,
-      "category": 1,
+      "capacity": [{"size": 256, "price": 0}, {"size": 512, "price": 400}],
+      "price": 1500,
+      "category": 2,
       "rating": 4
     },
     {
@@ -35,9 +35,9 @@
       "imagePath": "img/ipad_pro/",
       "name": "iPad Pro",
       "colors": ["303135", "afb0b2"],
-      "capacity": [128, 256, 512, 1000],
-      "price": 275,
-      "category": 2,
+      "capacity": [{"size": 128, "price": 0}, {"size": 256, "price": 150}, {"size": 512, "price": 250}, {"size": 1000, "price": 500}],
+      "price": 1300,
+      "category": 1,
       "rating": 2
     },
     {
@@ -45,8 +45,8 @@
       "imagePath": "img/airpods/",
       "name": "AirPods",
       "types": [0, 1],
-      "price": 415,
-      "category": 3,
+      "price": 180,
+      "category": 4,
       "rating": 8
     },
     {
@@ -54,8 +54,8 @@
       "imagePath": "img/airpods_pro/",
       "name": "AirPods Pro",
       "types": [0],
-      "price": 580,
-      "category": 2,
+      "price": 320,
+      "category": 4,
       "rating": 2
     },
     {
@@ -63,9 +63,9 @@
       "imagePath": "img/imac_24_m1/",
       "name": "iMac 24\" Apple M1",
       "colors": ["e8c990", "a6c0b7", "eaa993", "abafca", "ebb9b0", "c7c8ca", "a7bdd2"],
-      "capacity": [256, 512],
-      "price": 675,
-      "category": 1,
+      "capacity": [{"size": 256, "price": 0}, {"size": 512, "price": 400}],
+      "price": 1700,
+      "category": 2,
       "rating": 9
     },
     {
@@ -73,9 +73,9 @@
       "imagePath": "img/iphone_12/",
       "name": "iPhone 12 mini",
       "colors": ["beb7ea", "000000", "033357", "dbf2d8", "d52b2b", "ffffff"],
-      "capacity": [64, 128, 256],
-      "price": 599,
-      "category": 4,
+      "capacity": [{"size": 64, "price": 0}, {"size": 128, "price": 100}, {"size": 256, "price": 150}],
+      "price": 900,
+      "category": 0,
       "rating": 10
     },
     {
@@ -83,18 +83,19 @@
       "imagePath": "img/iphone_12_pro/",
       "name": "iPhone 12 Pro Max",
       "colors": ["3f5a65", "3c3b37", "fdeacc", "e4e5df"],
-      "capacity": [128, 256, 512],
-      "price": 999,
-      "category": 5,
+
+      "capacity": [{"size": 128, "price": 0}, {"size": 256, "price": 150}, {"size": 512, "price": 200}],
+      "price": 1300,
+      "category": 0,
       "rating": 10
     },
     {
       "id": 9,
       "imagePath": "img/apple_tv_4k/",
       "name": "Apple TV 4K",
-      "capacity": [32, 64],
-      "price": 285,
-      "category": 5,
+      "capacity": [{"size": 32, "price": 0}, {"size": 64, "price": 50}],
+      "price": 200,
+      "category": 3,
       "rating": 7
     }
   ]

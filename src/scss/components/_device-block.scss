@@ -1,6 +1,6 @@
 @import '../variables';
 
-.pizza-block {
+.device-block {
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
@@ -12,6 +12,7 @@
 
   &__image {
     width: 220px;
+    margin-bottom: 20px;
   }
 
   &__title {
