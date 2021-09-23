@@ -84,7 +84,7 @@
       "name": "iPhone 12 Pro Max",
       "colors": ["3f5a65", "3c3b37", "fdeacc", "e4e5df"],
 
-      "capacity": [{"size": 128, "price": 0}, {"size": 256, "price": 150}, {"size": 512, "price": 200}],
+      "capacity": [{"size": 128, "price": 0}, {"size": 256, "price": 150}, {"size": 512, "price": 300}],
       "price": 1300,
       "category": 0,
       "rating": 10

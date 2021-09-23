@@ -2,40 +2,30 @@ import React from 'react';
 import {Header} from './components'
 import {Home, Cart} from './pages'
 import {Route} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {setDevices as setDevicesAction} from './redux/actions/devices'
+import {useDispatch} from 'react-redux';
+import {setDevices } from './redux/actions/devices'
 
-function App({items, setDevices}) {
+function App() {
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    fetch('http://localhost:3000/db.json')
+    fetch('https://apple-store-3bffa-default-rtdb.europe-west1.firebasedatabase.app/.json')
       .then((resp) => resp.json())
       .then((json) => {
-        setDevices(json.devices)
+        dispatch(setDevices(json.devices));
       });
-  },[setDevices])
+  },[dispatch])
 
   return ( 
     <div className="wrapper">
       <Header/>
       <div className="content">
-        <Route exact path="/" render={() => <Home devices={items}/>}/>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/cart" component={Cart}/>
       </div>
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.devices.items
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return { 
-    setDevices: (items) => dispatch(setDevicesAction(items))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

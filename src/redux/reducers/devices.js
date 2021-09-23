@@ -1,6 +1,5 @@
 const initialState = {
-    items: [],
-    isLoaded: false
+    items: []
 }
 
 const devices = (state = initialState, action) => {

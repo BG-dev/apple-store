@@ -1,8 +1,15 @@
 import React from "react";
-import {connect} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {Categories, SortPopup, DeviceBlock} from '../components'
 
-function Home({devices, activeItem}){
+function Home(){
+
+    const {devices, activeItem} = useSelector(({devices, categories}) => {
+      return{
+        devices: devices.items,
+        activeItem: categories.category
+      }
+    })
 
     return(
         <div className="container">
@@ -14,7 +21,9 @@ function Home({devices, activeItem}){
               'Mac',
               'TV',
               'AirPods'
-            ]}/>
+            ]}
+            activeItem={activeItem}
+            />
             <SortPopup
             items={[
               {name: 'популярности', type: 'popular'},
@@ -34,10 +43,4 @@ function Home({devices, activeItem}){
     );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    activeItem: state.categories.category
-  };
-};
-
-export default connect(mapStateToProps)(Home);
+export default Home;
