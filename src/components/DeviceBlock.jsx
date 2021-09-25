@@ -11,7 +11,7 @@ function DeviceBlock({device}){
                 src={"http://localhost:3000/" + device.imagePath + (device.colors ? (activeColor+1) : "1") + ".jpg"}
                 alt={device.name} />
               <h4 className="device-block__title">{device.name}</h4>
-              {device.colors && device.capacity &&
+              {device.colors  &&
               <div className="device-block__selector">
                 <ul>
                   { device.colors &&

@@ -1,17 +1,20 @@
 import React from "react";
+import {useDispatch} from 'react-redux';
+import {setFilters} from '../redux/actions/filters'
 
-function SortPopup({items}){
+function SortPopup({items, activeItem}){
+
+    const dispatch = useDispatch();
 
     const [visiblePopup, setVisiblePopup] = React.useState(false);
     const sortRef = React.useRef(null);
-    const [activeItem, setActiveItem] = React.useState(0);
 
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup)
     }
 
     const onSelectItem = (index) => {
-        setActiveItem(index);
+        dispatch(setFilters(index));
         toggleVisiblePopup();
     }
 
@@ -36,7 +39,7 @@ function SortPopup({items}){
                     fill="#2C2C2C" />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>{items[activeItem].name}</span>
+                <span onClick={toggleVisiblePopup}>{items[activeItem]}</span>
               </div>
               {visiblePopup && <div className="sort__popup">
                 <ul>
@@ -44,7 +47,7 @@ function SortPopup({items}){
                         items.map((obj, index) => <li 
                         className={activeItem === index ? 'active' : ''}
                         onClick={() =>  onSelectItem(index)}
-                        key={index}>{obj.name}</li>)
+                        key={index}>{obj}</li>)
                     }
                 </ul>
               </div>}
