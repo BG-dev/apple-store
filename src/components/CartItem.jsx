@@ -6,7 +6,7 @@ function CartItem({item, deleteItem, index}){
         <div className="cart__item">
         <div className="cart__item-img">
             <img className="pizza-block__image"
-                src={"http://localhost:3000/" + item.imagePath}
+                src={"/" + item.imagePath}
                 alt="Pizza" />
         </div>
         <div className="cart__item-info">

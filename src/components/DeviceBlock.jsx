@@ -29,7 +29,7 @@ function DeviceBlock({device}){
     return(
         <div className="device-block">
               <img className="device-block__image"
-                src={"http://localhost:3000/" + device.imagePath + (device.colors ? (activeColor+1) : "1") + ".jpg"}
+                src={"/" + device.imagePath + (device.colors ? (activeColor+1) : "1") + ".jpg"}
                 alt={device.name} />
               <h4 className="device-block__title">{device.name}</h4>
               {device.colors  &&
