@@ -5,9 +5,9 @@ function CartItem({item, deleteItem, index}){
     return(
         <div className="cart__item">
         <div className="cart__item-img">
-            <img className="pizza-block__image"
+            <img className="device-block__image"
                 src={"/" + item.imagePath}
-                alt="Pizza" />
+                alt="Device" />
         </div>
         <div className="cart__item-info">
             <h3>{item.name}</h3>
