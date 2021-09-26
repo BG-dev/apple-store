@@ -15,6 +15,10 @@ function Cart(){
         }
       })
 
+    const deleteItem = (indexItem) => {
+        dispatch(setCart(items.filter((item, index) => index !== indexItem)))
+    }
+
     return (
     // <div className="content">
         // <div className="container container--cart">
@@ -69,7 +73,7 @@ function Cart(){
                         {
                             items &&
                             items.map((item, index) => 
-                            <CartItem key={index} item={item}/>
+                            <CartItem key={index} item={item} deleteItem={deleteItem} index={index}/>
                             )
                         }
                    </div>
