@@ -4,6 +4,20 @@ import {Categories, SortPopup, DeviceBlock} from '../components'
 
 function Home(){
 
+    const FILTERING_ITEMS = [
+      'популярности',
+      'цене',
+      'алфавиту'
+    ];
+
+    const CATEGORIES_ITEMS = [
+      'iPhone',
+      'iPad',
+      'Mac',
+      'TV',
+      'AirPods'
+    ];
+
     const {devices, activeItem, sortBy} = useSelector(({devices, categories, filters}) => {
       return{
         devices: devices.items,
@@ -20,21 +34,11 @@ function Home(){
         <div className="container">
           <div className="content__top">
             <Categories 
-            items={[
-              'iPhone',
-              'iPad',
-              'Mac',
-              'TV',
-              'AirPods'
-            ]}
+            items={CATEGORIES_ITEMS}
             activeItem={activeItem}
             />
             <SortPopup
-            items={[
-              'популярности',
-              'цене',
-              'алфавиту'
-            ]}
+            items={FILTERING_ITEMS}
             activeItem={sortBy}
             />
           </div>

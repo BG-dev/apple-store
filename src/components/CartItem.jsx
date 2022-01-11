@@ -2,6 +2,8 @@ import React from "react";
 
 function CartItem({item, deleteItem, index}){
 
+    const itemCapacity = item.capacity >= 1000 ? item.capacity/1000 + ' ТБ' : item.capacity + ' ГБ';
+
     return(
         <div className="cart__item">
         <div className="cart__item-img">
@@ -12,7 +14,7 @@ function CartItem({item, deleteItem, index}){
         <div className="cart__item-info">
             <h3>{item.name}</h3>
             { item.capacity &&
-                <p>{item.capacity >= 1000 ? item.capacity/1000 + ' ТБ' : item.capacity + ' ГБ'}</p>
+                <p>{itemCapacity}</p>
             }
         </div>
         <div className="cart__item-price">

@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    fetch('https://apple-store-3bffa-default-rtdb.europe-west1.firebasedatabase.app/.json')
+    fetch('https://apple-store-36620-default-rtdb.europe-west1.firebasedatabase.app/.json')
       .then((resp) => resp.json())
       .then((json) => {
         dispatch(setDevices(json.devices));
