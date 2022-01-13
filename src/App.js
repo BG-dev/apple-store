@@ -8,9 +8,10 @@ import {setDevices } from './redux/actions/devices'
 function App() {
 
   const dispatch = useDispatch();
+  const databaseUrl = process.env.REACT_APP_DATABASE_URL;
 
   React.useEffect(() => {
-    fetch('https://apple-store-36620-default-rtdb.europe-west1.firebasedatabase.app/.json')
+    fetch(databaseUrl + '.json')
       .then((resp) => resp.json())
       .then((json) => {
         dispatch(setDevices(json.devices));
