@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from './components'
+import {Header, Footer} from './components'
 import {Home, Cart} from './pages'
 import {Route} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
@@ -16,7 +16,7 @@ function App() {
       .then((json) => {
         dispatch(setDevices(json.devices));
       });
-  },[dispatch])
+  },[dispatch, databaseUrl])
 
   return ( 
     <div className="wrapper">
@@ -25,6 +25,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route exact path="/cart" component={Cart}/>
       </div>
+      <Footer/>
     </div>
   );
 }
