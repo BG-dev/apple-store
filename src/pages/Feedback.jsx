@@ -8,7 +8,7 @@ function Feedback(){
     const form = useRef();
 
     const sendEmail = () => {
-        emailjs.sendForm('service_3j78fnv', 'template_h9zp4g6', form.current, 'user_5j9H9YW3FYii9lfZ5lnjp')
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_USER_ID)
           .then((result) => {
               console.log(result.text);
           }, (error) => {
