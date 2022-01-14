@@ -1,6 +1,6 @@
 import React from 'react';
 import {Header, Footer} from './components'
-import {Home, Cart} from './pages'
+import {Home, Cart, Feedback} from './pages'
 import {Route} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {setDevices } from './redux/actions/devices'
@@ -24,6 +24,7 @@ function App() {
       <div className="content">
         <Route exact path="/" component={Home}/>
         <Route exact path="/cart" component={Cart}/>
+        <Route exact path="/feedback" component={Feedback}/>
       </div>
       <Footer/>
     </div>
