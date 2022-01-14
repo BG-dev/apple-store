@@ -4,11 +4,14 @@ import {Home, Cart, Feedback} from './pages'
 import {Route} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {setDevices } from './redux/actions/devices'
+import { setCart } from './redux/actions/cart';
 
 function App() {
 
   const dispatch = useDispatch();
   const databaseUrl = process.env.REACT_APP_DATABASE_URL;
+  const cartItems = JSON.parse(window.localStorage.getItem('cartItems')) || [];
+  dispatch(setCart(cartItems))
 
   React.useEffect(() => {
     fetch(databaseUrl + '.json')

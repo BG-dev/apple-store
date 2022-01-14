@@ -23,7 +23,9 @@ function DeviceBlock({device}){
       price: device.price + (device.capacity ? device.capacity[activeCapacity].price : 0)
     }
 
-    dispatch(setCart([...items, item]))
+    const newItems = [...items, item];
+    dispatch(setCart(newItems));
+    window.localStorage.setItem('cartItems', JSON.stringify(newItems))
   }
 
     return(

@@ -16,7 +16,14 @@ function Cart(){
       })
 
     const deleteItem = (indexItem) => {
-        dispatch(setCart(items.filter((item, index) => index !== indexItem)))
+        const newItems = items.filter((item, index) => index !== indexItem);
+        dispatch(setCart(newItems))
+        window.localStorage.setItem('cartItems', JSON.stringify(newItems));
+    }
+
+    const clearCart = () => {
+        dispatch(setCart([]));
+        window.localStorage.setItem('cartItems', JSON.stringify([]));
     }
 
     return (
@@ -27,7 +34,7 @@ function Cart(){
         <div className="content">
            <div className="container container--cart">
                {
-                   (items.length < 1) ? 
+                   (items && items.length < 1) ? 
                    (
                         <div className="cart cart--empty">
                             <h2>Корзина пустая
@@ -72,7 +79,7 @@ function Cart(){
                                         strokeLinejoin="round" />
                                 </svg>
 
-                                <span onClick={() => dispatch(setCart([]))}>Очистить корзину</span>
+                                <span onClick={() => clearCart()}>Очистить корзину</span>
                             </div>
                         </div>
                         <div className="content__items">
@@ -85,8 +92,8 @@ function Cart(){
                         </div>
                         <div className="cart__bottom">
                             <div className="cart__bottom-details">
-                                <span> Всего устройств: <b>{items.length} шт.</b> </span>
-                                <span> Сумма заказа: <b>{items.reduce((sum, item) => sum + item.price, 0)} $</b> </span>
+                                <span> Всего устройств: <b>{items && items.length} шт.</b> </span>
+                                <span> Сумма заказа: <b>{items && items.reduce((sum, item) => sum + item.price, 0)} $</b> </span>
                             </div>
                             <div className="cart__bottom-buttons">
                                 <Link to="/" className="button button--outline button--add go-back-btn">
