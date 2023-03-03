@@ -1,13 +1,13 @@
-@import '../variables';
+@import "../variables";
 
 .device-block {
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
   margin-right: 35px;
-  
+
   &__image {
-    width: 220px;
+    width: 80%;
     margin-bottom: 20px;
   }
 
@@ -24,6 +24,7 @@
     border-radius: 10px;
     flex-direction: column;
     padding: 6px;
+    gap: 10px;
 
     ul {
       display: flex;
@@ -31,16 +32,12 @@
       justify-content: center;
       flex: 1;
 
-      &:first-of-type {
-        margin-bottom: 6px;
-      }
-
       li {
-        padding: 8px;
+        padding: 10px;
         flex: 1;
         cursor: pointer;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 16px;
         @include noselect();
         &.active {
           background: #ffffff;
@@ -49,15 +46,15 @@
           cursor: auto;
         }
 
-        &.color{
+        &.color {
           flex: none;
           border-radius: 100px;
-          padding: 15px;
+          padding: 20px;
           margin: 2px;
           height: 10px;
-          &.active{
-            border: 2px solid #1E90FF;
-            padding: 13px;
+          &.active {
+            border: 2px solid #1e90ff;
+            padding: 18px;
           }
         }
       }
@@ -77,5 +74,39 @@
     line-height: 27px;
     letter-spacing: 0.015em;
     margin-left: 30px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .device-block {
+    width: 330px;
+  }
+}
+
+@media (max-width: 915px) {
+  .device-block {
+    width: 350px;
+
+    &__selector ul li {
+      padding: 12px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .device-block {
+    width: 260px;
+    margin-right: 0;
+
+    &__selector ul li {
+      &.color {
+        padding: 16px;
+        &.active {
+          border: 2px solid #1e90ff;
+          padding: 14px;
+        }
+      }
+    }
   }
 }

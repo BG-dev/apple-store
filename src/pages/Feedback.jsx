@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useFormik } from 'formik'
-import emailjs from 'emailjs-com'
 import {Button} from '../components'
 
 function Feedback(){
@@ -8,12 +7,7 @@ function Feedback(){
     const form = useRef();
 
     const sendEmail = () => {
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_USER_ID)
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
+        console.log("Feedback")
       };
 
     const formik = useFormik({
