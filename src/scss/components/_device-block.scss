@@ -24,7 +24,6 @@
     border-radius: 10px;
     flex-direction: column;
     padding: 6px;
-    gap: 10px;
 
     ul {
       display: flex;
@@ -97,9 +96,11 @@
 @media (max-width: 790px) {
   .device-block {
     width: 260px;
-    margin-right: 0;
+    margin-right: 15px;
 
     &__selector ul li {
+      font-size: 16px;
+
       &.color {
         padding: 16px;
         &.active {

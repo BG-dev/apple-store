@@ -8,6 +8,14 @@ body {
   background-color: $background;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
